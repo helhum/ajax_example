@@ -1,0 +1,24 @@
+plugin.tx_ajaxexample {
+	view {
+		templateRootPath = {$plugin.tx_ajaxexample.view.templateRootPath}
+		partialRootPath = {$plugin.tx_ajaxexample.view.partialRootPath}
+		layoutRootPath = {$plugin.tx_ajaxexample.view.layoutRootPath}
+	}
+}
+
+page.includeJSFooterlibs {
+	ajax_example_jquery = http://code.jquery.com/jquery-1.11.1.min.js
+	ajax_example_jquery {
+		excludeFromConcatenation = 1
+		disableCompression = 1
+		external = 1
+	}
+}
+
+page.includeJSFooter.ajax_example = EXT:ajax_example/Resources/Public/JavaScript/ajax_example.js
+
+plugin.tx_news {
+	view {
+		widget.Tx_News_ViewHelpers_Widget_PaginateViewHelper.templateRootPath = EXT:ajax_example/Resources/Private/Templates/News/
+	}
+}

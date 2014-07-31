@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers">
+{namespace helhum=Helhum\AjaxExample\ViewHelpers}
+{namespace t=Helhum\TyposcriptRendering\ViewHelpers}
+
+<head>
+</head>
+
+<f:layout name="Default" />
+
+<f:section name="main">
+	<h1 class="foo">Hello {name}</h1>
+	<h2>Greet another one:</h2>
+	<f:form action="greet">
+		<f:form.textfield name="name" required="required" id="greeted-name"/>
+		<f:form.submit id="regular-submit" value="Greet!" />
+		<f:form.submit id="ajax-submit" value="Greet! (Ajax)" additionalAttributes="{data-ajaxuri: '{t:uri.ajaxAction(action: \'greet\')}'}"/>
+	</f:form>
+</f:section>
+
+</html>
