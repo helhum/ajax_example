@@ -4,6 +4,9 @@ plugin.tx_ajaxexample {
 		partialRootPath = {$plugin.tx_ajaxexample.view.partialRootPath}
 		layoutRootPath = {$plugin.tx_ajaxexample.view.layoutRootPath}
 	}
+	settings {
+		ajaxPageType = {$plugin.tx_ajaxexample.settings.ajaxPageType}
+	}
 }
 
 page.includeJSFooterlibs {
@@ -15,10 +18,40 @@ page.includeJSFooterlibs {
 	}
 }
 
-page.includeJSFooter.ajax_example = EXT:ajax_example/Resources/Public/JavaScript/ajax_example.js
+page.includeJSFooter.ajax_example = EXT:ajax_example/Resources/Public/Scripts/JavaScript/ajax_example.js
 
 plugin.tx_news {
 	view {
 		widget.Tx_News_ViewHelpers_Widget_PaginateViewHelper.templateRootPath = EXT:ajax_example/Resources/Private/Templates/News/
+	}
+}
+
+tx_ajaxexample_ajaxPage = PAGE
+tx_ajaxexample_ajaxPage {
+	typeNum = {$plugin.tx_ajaxexample.settings.ajaxPageType}
+	config {
+		disableAllHeaderCode = 1
+		xhtml_cleaning = 0
+		admPanel = 0
+		additionalHeaders = Content-type: text/plain
+		no_cache = 0
+	}
+
+	10 = USER
+	10 {
+		userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+		extensionName = AjaxExample
+		pluginName = PiExample
+		vendorName = Helhum
+		controller = Example
+		switchableControllerActions {
+			Example {
+				1 = hello
+				2 = greet
+			}
+		}
+		view < plugin.tx_ajaxexample.view
+		persistence < plugin.tx_ajaxexample.persistence
+		settings < plugin.tx_ajaxexample.settings
 	}
 }

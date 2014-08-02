@@ -1,21 +1,23 @@
 <?php
-namespace Helhum\AjaxExample\Controller;
+namespace Helhum\AjaxExample\View\Example;
 
 /***************************************************************
  *  Copyright notice
  *
- *  (c) 2014 Helmut Hummel
- *
+ *  (c) 2014 Helmut Hummel <helmut.hummel@typo3.org>
  *  All rights reserved
  *
  *  This script is part of the TYPO3 project. The TYPO3 project is
  *  free software; you can redistribute it and/or modify
  *  it under the terms of the GNU General Public License as published by
- *  the Free Software Foundation; either version 3 of the License, or
+ *  the Free Software Foundation; either version 2 of the License, or
  *  (at your option) any later version.
  *
  *  The GNU General Public License can be found at
  *  http://www.gnu.org/copyleft/gpl.html.
+ *  A copy is found in the text file GPL.txt and important notices to the license
+ *  from the author is found in LICENSE.txt distributed with these scripts.
+ *
  *
  *  This script is distributed in the hope that it will be useful,
  *  but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -24,37 +26,21 @@ namespace Helhum\AjaxExample\Controller;
  *
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
-use Helhum\AjaxExample\Property\TypeConverter\UploadedFileReferenceConverter;
-use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
+use TYPO3\CMS\Extbase\Mvc\View\AbstractView;
 
 /**
- *
- *
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
- *
+ * Class HelloJsonView
  */
-class ExampleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class HelloJson extends AbstractView {
 
 	/**
-	 * @return void
-	 */
-	public function helloAction() {
-	}
-
-	/**
-	 * @return void
-	 */
-	public function indexAction() {
-	}
-
-	/**
-	 * Action greeting
+	 * Renders the view
 	 *
-	 * @param string $name
-	 * @return void
+	 * @return string The rendered view
+	 * @api
 	 */
-	public function greetAction($name) {
-		$this->view->assign('name', $name);
+	public function render() {
+		return json_encode('Hello World');
 	}
-}
-?>
+
+} 

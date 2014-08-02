@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en"
+      xmlns:f="http://xsd.helmut-hummel.de/ns/TYPO3/CMS/Fluid/ViewHelpers">
+{namespace t=Helhum\TyposcriptRendering\ViewHelpers}
+
+<head>
+
+</head>
+
+<f:layout name="Default" />
+
+<f:section name="main">
+
+	<h1>TypoScript Rendering Ajax Examples</h1>
+	<h2><f:link.action action="greet" arguments="{name: 'Helmut'}">Simple TypoScript Rendering Ajax demo</f:link.action></h2>
+
+
+	<h3>Different Ajax dispatch methods performance results:</h3>
+	<pre id="ajax-results"></pre>
+	<h4><a href="{f:uri.action(action: 'hello', format: 'json', pageType:settings.ajaxPageType) -> f:format.htmlentities()}" class="ajax-link">Ajax Request with Page Type</a> (not recommended)</h4>
+	<h4><a href="/index.php?eID=ajax_example&amp;tx_ajaxexample_piexample[format]=json" class="ajax-link">Ajax Request with eID</a> (not recommended)</h4>
+	<h4><a href="{t:uri.ajaxAction(action: 'hello', format: 'json', controller: 'Example', pluginName: 'PiExample') -> f:format.htmlentities()}" class="ajax-link">Ajax Request with TypoScript Rendering</a>  (recommended)</h4>
+
+
+</f:section>
+
+</html>

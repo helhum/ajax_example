@@ -7,4 +7,6 @@ plugin.tx_ajaxexample {
 		# cat=plugin.tx_ajaxexample/file; type=string; label=Path to template layouts (FE)
 		layoutRootPath = EXT:ajax_example/Resources/Private/Layouts/
 	}
+
+	settings.ajaxPageType = 1337
 }
