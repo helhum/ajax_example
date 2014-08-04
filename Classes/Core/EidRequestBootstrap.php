@@ -36,7 +36,7 @@ class EidRequestBootstrap {
 	}
 
 	/**
-	 * Initialize Frontend environmant
+	 * Initialize frontend environment
 	 */
 	public function __construct() {
 		if (empty($_POST['tx_ajaxexample_piexample']['action'])) {

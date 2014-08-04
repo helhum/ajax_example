@@ -25,6 +25,7 @@ namespace Helhum\AjaxExample\Controller;
  *  This copyright notice MUST APPEAR in all copies of the script!
  ***************************************************************/
 use Helhum\AjaxExample\Property\TypeConverter\UploadedFileReferenceConverter;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
 
 /**
@@ -33,7 +34,7 @@ use TYPO3\CMS\Extbase\Property\PropertyMappingConfiguration;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ExampleController extends \TYPO3\CMS\Extbase\Mvc\Controller\ActionController {
+class ExampleController extends ActionController {
 
 	/**
 	 * @return void
