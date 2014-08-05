@@ -40,7 +40,7 @@ class HelloJson extends AbstractView {
 	 * @api
 	 */
 	public function render() {
-		return json_encode('Hello World');
+		return json_encode(array('Hello World', $this->variables['time']));
 	}
 
 } 

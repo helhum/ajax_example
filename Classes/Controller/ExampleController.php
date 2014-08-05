@@ -40,6 +40,7 @@ class ExampleController extends ActionController {
 	 * @return void
 	 */
 	public function helloAction() {
+		$this->view->assign('time', time());
 	}
 
 	/**
