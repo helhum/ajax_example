@@ -47,6 +47,7 @@ class ExampleController extends ActionController {
 	 * @return void
 	 */
 	public function indexAction() {
+		$this->view->assign('pageId', (int)$GLOBALS['TSFE']->id);
 	}
 
 	/**

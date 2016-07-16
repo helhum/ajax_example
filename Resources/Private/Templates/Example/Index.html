@@ -19,12 +19,12 @@
 	<h3>Different Ajax dispatch methods performance results:</h3>
 	<pre id="ajax-results"></pre>
 	<h4><f:link.action action="hello" format="json" pageType="{settings.ajaxPageType}" class="ajax-link">Ajax Request with Page Type</f:link.action> (not recommended)</h4>
-	<h4><a href="/index.php?eID=ajax_example&amp;tx_ajaxexample_piexample[format]=json" class="ajax-link">Ajax Request with eID</a> (not recommended)</h4>
+	<h4><a href="/index.php?id={pageId}&amp;eID=ajax_example&amp;tx_ajaxexample_piexample[format]=json" class="ajax-link">Ajax Request with eID</a> (not recommended)</h4>
 	<h4><a href="{t:uri.ajaxAction(action: 'hello', format: 'json', controller: 'Example', pluginName: 'PiExample') -> f:format.htmlentities()}" class="ajax-link">Ajax Request with TypoScript Rendering</a>  (recommended)</h4>
 
 	<h3>eID Performance compared with TS-Rendering:</h3>
-	<h4><a href="/index.php?eID=ajax_example_hello" class="ajax-link">Hello World by eID</a></h4>
-	<h4><a href="/index.php?eID=ajax_example_hello&amp;feuser=1" class="ajax-link">Hello World with feuser by eID</a></h4>
+	<h4><a href="/index.php?id={pageId}&amp;eID=ajax_example_hello" class="ajax-link">Hello World by eID</a></h4>
+	<h4><a href="/index.php?id={pageId}&amp;eID=ajax_example_hello&amp;feuser=1" class="ajax-link">Hello World with feuser by eID</a></h4>
 	<h4><f:link.page additionalParams="{tx_typoscriptrendering: {context: '{\"renderer\": \"hello\"}'}}" class="ajax-link">Hello World by TS-Rendering</f:link.page></h4>
 
 
