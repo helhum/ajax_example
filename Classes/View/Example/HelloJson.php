@@ -31,16 +31,17 @@ use TYPO3\CMS\Extbase\Mvc\View\AbstractView;
 /**
  * Class HelloJsonView
  */
-class HelloJson extends AbstractView {
-
-	/**
-	 * Renders the view
-	 *
-	 * @return string The rendered view
-	 * @api
-	 */
-	public function render() {
-		return json_encode(array('Hello World', $this->variables['time']));
-	}
-
-} 
+class HelloJson extends AbstractView
+{
+    /**
+     * Renders the view
+     *
+     * @return string The rendered view
+     *
+     * @api
+     */
+    public function render()
+    {
+        return json_encode(array('Hello World', $this->variables['time']));
+    }
+}

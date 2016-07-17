@@ -33,30 +33,33 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
  *
  */
-class ExampleController extends ActionController {
+class ExampleController extends ActionController
+{
+    /**
+     * @return void
+     */
+    public function helloAction()
+    {
+        $this->view->assign('time', time());
+    }
 
-	/**
-	 * @return void
-	 */
-	public function helloAction() {
-		$this->view->assign('time', time());
-	}
+    /**
+     * @return void
+     */
+    public function indexAction()
+    {
+        $this->view->assign('pageId', (int)$GLOBALS['TSFE']->id);
+    }
 
-	/**
-	 * @return void
-	 */
-	public function indexAction() {
-		$this->view->assign('pageId', (int)$GLOBALS['TSFE']->id);
-	}
-
-	/**
-	 * Action greeting
-	 *
-	 * @param string $name
-	 * @return void
-	 */
-	public function greetAction($name) {
-		$this->view->assign('name', $name);
-	}
+    /**
+     * Action greeting
+     *
+     * @param string $name
+     *
+     * @return void
+     */
+    public function greetAction($name)
+    {
+        $this->view->assign('name', $name);
+    }
 }
-?>
