@@ -10,7 +10,7 @@ plugin.tx_ajaxexample {
 }
 
 page.includeJSFooterlibs {
-	ajax_example_jquery = http://code.jquery.com/jquery-1.11.1.min.js
+	ajax_example_jquery = https://code.jquery.com/jquery-2.2.4.min.js
 	ajax_example_jquery {
 		excludeFromConcatenation = 1
 		disableCompression = 1
