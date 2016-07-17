@@ -34,29 +34,32 @@ use Helhum\TyposcriptRendering\Renderer\RenderingInterface;
 /**
  * Class HelloWorldRenderer
  */
-class HelloWorldRenderer implements RenderingInterface {
+class HelloWorldRenderer implements RenderingInterface
+{
+    /**
+     * Whether the required arguments for rendering are present or not
+     *
+     * @param Request $request
+     *
+     * @return bool
+     */
+    public function canRender(Request $request)
+    {
+        return $request->hasArgument('renderer') && $request->getArgument('renderer') === 'hello';
+    }
 
-	/**
-	 * Whether the required arguments for rendering are present or not
-	 *
-	 * @param Request $request
-	 * @return bool
-	 */
-	public function canRender(Request $request) {
-		return $request->hasArgument('renderer') && $request->getArgument('renderer') === 'hello';
-	}
-
-	/**
-	 * Evaluates request arguments, renders a string based on them
-	 * and sets the string content to the response.
-	 *
-	 * @param Request $request
-	 * @param Response $response
-	 * @param RenderingContext $renderingContext
-	 * @return void
-	 */
-	public function renderRequest(Request $request, Response $response, RenderingContext $renderingContext) {
-		$response->setContent('Hello World');
-	}
-
-} 
+    /**
+     * Evaluates request arguments, renders a string based on them
+     * and sets the string content to the response.
+     *
+     * @param Request $request
+     * @param Response $response
+     * @param RenderingContext $renderingContext
+     *
+     * @return void
+     */
+    public function renderRequest(Request $request, Response $response, RenderingContext $renderingContext)
+    {
+        $response->setContent('Hello World');
+    }
+}
