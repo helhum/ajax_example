@@ -11,7 +11,7 @@ use TYPO3\CMS\Frontend\Utility\EidUtility;
  * This class is basically taken from:
  * https://lbrmedia.net/ajaxexample/
  *
- * I would not recommend to use it like this, it is just here to demostrate
+ * I would not recommend to use it like this, it is just here to demonstrate
  * that even with a crippled frontend bootstrap there will be no major performance gain...
  */
 class EidRequestBootstrap
