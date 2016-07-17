@@ -63,10 +63,9 @@ class EidRequestBootstrap {
 		$typoScriptFrontendController->fe_user = $feUserObj;
 		$typoScriptFrontendController->id = $pageId;
 		$typoScriptFrontendController->determineId();
-		$typoScriptFrontendController->getCompressedTCarray();
 		$typoScriptFrontendController->initTemplate();
 		$typoScriptFrontendController->getConfigArray();
-		$typoScriptFrontendController->includeTCA();
+		EidUtility::initTCA();
 
 		/** @var TypoScriptService $typoScriptService */
 		$typoScriptService = GeneralUtility::makeInstance('TYPO3\\CMS\\Extbase\\Service\\TypoScriptService');
