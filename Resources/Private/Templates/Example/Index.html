@@ -15,7 +15,6 @@
 	<h1>TypoScript Rendering Ajax Examples</h1>
 	<h2><f:link.action action="greet" arguments="{name: 'Helmut'}">Simple TypoScript Rendering Ajax demo</f:link.action></h2>
 
-
 	<h3>Different Ajax dispatch methods performance results:</h3>
 	<pre id="ajax-results"></pre>
 	<h4><f:link.action action="hello" format="json" pageType="{settings.ajaxPageType}" class="ajax-link">Ajax Request with Page Type</f:link.action> (not recommended)</h4>
@@ -25,7 +24,7 @@
 	<h3>eID Performance compared with TS-Rendering:</h3>
 	<h4><a href="/index.php?id={pageId}&amp;eID=ajax_example_hello" class="ajax-link">Hello World by eID</a></h4>
 	<h4><a href="/index.php?id={pageId}&amp;eID=ajax_example_hello&amp;feuser=1" class="ajax-link">Hello World with feuser by eID</a></h4>
-	<h4><f:link.page additionalParams="{tx_typoscriptrendering: {context: '{\"renderer\": \"hello\"}'}}" class="ajax-link">Hello World by TS-Rendering</f:link.page></h4>
+	<h4><f:link.page additionalParams="{tx_typoscriptrendering: {context: helloWorldRenderer}}" class="ajax-link">Hello World by TS-Rendering</f:link.page></h4>
 
 
 
